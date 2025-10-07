@@ -1,0 +1,324 @@
+/* Modern TailwindCSS-inspired styles with animations */
+
+/* Global Streamlit overrides */
+.stApp {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    min-height: 100vh;
+}
+
+.main .block-container {
+    padding: 2rem 1rem !important;
+    max-width: 1200px !important;
+    background: transparent !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    min-height: 100vh !important;
+}
+
+.stApp > header {
+    background: transparent !important;
+}
+
+.stApp > div[data-testid="stDecoration"] {
+    background: transparent !important;
+}
+
+/* Hide Streamlit menu and footer */
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
+
+.content-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: slideUp 0.6s ease-out;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    color: #000000 !important;
+}
+
+.content-card * {
+    color: #000000 !important;
+}
+
+.content-card label {
+    color: #000000 !important;
+    font-weight: 600 !important;
+}
+
+.content-card .stMarkdown {
+    color: #000000 !important;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.generate-btn {
+    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(238, 90, 36, 0.3);
+}
+
+.generate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(238, 90, 36, 0.4);
+}
+
+.result-container {
+    background: rgba(248, 250, 252, 0.9);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border-left: 4px solid #667eea;
+    animation: slideIn 0.5s ease-out;
+}
+
+.copy-btn {
+    background: #10b981;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.copy-btn:hover {
+    background: #059669;
+    transform: scale(1.05);
+}
+
+.loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .main .block-container {
+        padding: 1rem 0.5rem !important;
+    }
+    
+    .content-card {
+        padding: 1.5rem;
+        border-radius: 15px;
+        margin: 0.5rem;
+    }
+    
+    .stButton > button {
+        width: 100% !important;
+    }
+}
+
+/* Enhanced Streamlit component styling */
+.stTextInput > div > div > input {
+    border-radius: 10px !important;
+    border: 2px solid #e2e8f0 !important;
+    transition: all 0.2s ease !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    color: #000000 !important;
+}
+
+/* Comprehensive placeholder styling */
+.stTextInput > div > div > input::placeholder {
+    color: #999999 !important;
+}
+
+.stSelectbox > div > div > div::placeholder {
+    color: #999999 !important;
+}
+
+.stTextArea > div > div > textarea::placeholder {
+    color: #999999 !important;
+}
+
+input::placeholder {
+    color: #999999 !important;
+}
+
+textarea::placeholder {
+    color: #999999 !important;
+}
+
+/* Additional placeholder selectors */
+::placeholder {
+    color: #999999 !important;
+}
+
+::-webkit-input-placeholder {
+    color: #999999 !important;
+}
+
+::-moz-placeholder {
+    color: #999999 !important;
+}
+
+:-ms-input-placeholder {
+    color: #999999 !important;
+}
+
+:-moz-placeholder {
+    color: #999999 !important;
+}
+
+/* Streamlit specific placeholder styling */
+.stTextInput input::placeholder,
+.stTextArea textarea::placeholder,
+.stSelectbox select::placeholder {
+    color: #999999 !important;
+}
+
+.stTextInput > label {
+    color: #000000 !important;
+    font-weight: 600 !important;
+}
+
+.stTextInput > div > div > input:focus {
+    border-color: #667eea !important;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
+    color: #000000 !important;
+}
+
+.stTextInput label {
+    color: #000000 !important;
+    font-weight: 600 !important;
+}
+
+.stSelectbox label {
+    color: #000000 !important;
+    font-weight: 600 !important;
+}
+
+.stSlider label {
+    color: #000000 !important;
+    font-weight: 600 !important;
+}
+
+.stSelectbox > div > div > div {
+    border-radius: 10px !important;
+    border: 2px solid #e2e8f0 !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    color: #999999 !important;
+}
+
+.stSelectbox option {
+    color: #999999 !important;
+}
+
+.stSelectbox select {
+    color: #999999 !important;
+}
+
+.stSlider > div > div > div > div {
+    background: linear-gradient(90deg, #667eea, #764ba2) !important;
+}
+
+.stTextArea > div > div > textarea {
+    border-radius: 10px !important;
+    border: 2px solid #e2e8f0 !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+}
+
+.stButton > button {
+    background: linear-gradient(45deg, #667eea, #764ba2) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 12px !important;
+    padding: 0.75rem 2rem !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3) !important;
+}
+
+.stButton > button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4) !important;
+}
+
+.stDownloadButton > button {
+    background: linear-gradient(45deg, #10b981, #059669) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 8px !important;
+    transition: all 0.2s ease !important;
+}
+
+.stDownloadButton > button:hover {
+    transform: scale(1.05) !important;
+}
+
+.stAlert {
+    border-radius: 10px !important;
+    backdrop-filter: blur(10px) !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    color: #000000 !important;
+    border: 2px solid #f59e0b !important;
+}
+
+.stAlert > div {
+    color: #000000 !important;
+}
+
+.stAlert * {
+    color: #000000 !important;
+}
+
+.stSpinner {
+    color: #667eea !important;
+}
+
+.stProgress > div > div > div {
+    background: linear-gradient(90deg, #667eea, #764ba2) !important;
+}
